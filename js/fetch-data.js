@@ -18,7 +18,7 @@ request.onload = function () {
     console.log(jsonData)
     console.log("Total Cases: " + jsonData['data']['summary']['total'])
 
-    populateNumber(jsonData);
+    buttonClick();
 }
 
 function changeBgColor(newColor) {
@@ -85,15 +85,15 @@ function populateNumber(obj) {
 function buttonClick() {
     if (ovr_state == 0) {
         populateNumber(request.response)
-        changeBgColor(green_color)
+        changeBgColor(cream_color)
     }
     if (ovr_state == 1) {
         populateNumber(request.response)
-        changeBgColor(scream_color)
+        changeBgColor(green_color)
     }
     if (ovr_state == 2) {
         populateNumber(request.response)
-        changeBgColor(cream_color)
+        changeBgColor(scream_color)
     }
     ovr_state = (ovr_state + 1) % 3
 };
