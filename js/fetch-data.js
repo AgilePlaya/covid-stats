@@ -42,7 +42,7 @@ function populateNumber(obj) {
         elemLabel.animate({
             opacity: [1, 0]
         }, 1000);
-        elemLabel.innerText = 'Cumulative Confirmed Cases'
+        elemLabel.innerText = 'Cumulative Confirmed Cases in India'
         elemLabel.animate({
             opacity: [0, 1]
         }, 1000);
@@ -58,7 +58,7 @@ function populateNumber(obj) {
         elemLabel.animate({
             opacity: [1, 0]
         }, 1000);
-        elemLabel.innerText = 'Cumulative Recovered Cases'
+        elemLabel.innerText = 'Cumulative Recovered Cases in India'
         elemLabel.animate({
             opacity: [0, 1]
         }, 1000);
@@ -74,7 +74,7 @@ function populateNumber(obj) {
         elemLabel.animate({
             opacity: [1, 0]
         }, 1000);
-        elemLabel.innerText = 'Cumulative Deaths'
+        elemLabel.innerText = 'Cumulative Deaths in India'
         elemLabel.animate({
             opacity: [0, 1]
         }, 1000);
