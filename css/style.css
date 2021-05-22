@@ -1,9 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #E6EBE0;
     box-sizing: border-box;
-    font-family: 'MuseoModerno', cursive;
+    font-family: 'Montserrat', sans-serif;
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -13,6 +12,7 @@
 
 body {
     overflow: hidden;
+    background-color: #f7eace;
 }
 
 .container {
@@ -23,7 +23,6 @@ body {
     position: absolute;
 
     z-index: 10;
-    background-color: #E6EBE0;
 }
 
 .header {
@@ -35,7 +34,7 @@ body {
     width: 100vw;
     height: 10vh;
 
-    padding: auto;
+    padding: 1vh;
     margin: auto;
 }
 
@@ -54,7 +53,7 @@ body {
     width: 100vw;
     height: 80vh;
 
-    padding: auto;
+    padding: 1vh;
     margin: auto;
 }
 
@@ -71,7 +70,7 @@ body {
     text-align: center;
     vertical-align: middle;
 
-    color: #121b35;
+    color: #0e113f;
 }
 
 .footer {
@@ -83,6 +82,38 @@ body {
     width: 100vw;
     height: 10vh;
 
-    padding: auto;
+    padding: 1vh;
     margin: auto;
+}
+
+.button {
+    position: absolute;
+
+    height: 6vh;
+    width: 8vw;
+
+    margin: 1vh 2vh 1vh 2vh;
+    padding: auto;
+
+    font-size: 1.5vh;
+
+    background-color: #0e113f;
+    color: white;
+    border-color: transparent;
+    border-radius: 50px;
+    border-width: 3px;
+
+    transition-duration: 0.5s;
+}
+
+
+.button:hover {
+    background-color: transparent;
+
+    color: #0e113f;
+    border-color: #0e113f;
+
+    cursor: pointer;
+
+    transition-duration: 0.5s;
 }
