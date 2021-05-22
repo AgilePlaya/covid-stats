@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    user-select: none;
     /* supported by Chrome and Opera */
     -webkit-user-select: none;
     /* Safari */
@@ -13,6 +12,8 @@
     /* Firefox */
     -ms-user-select: none;
     /* Internet Explorer/Edge */
+    user-select: none;
+    /* Default */
 }
 
 body {
@@ -84,10 +85,10 @@ body {
 
     color: #0e113f;
     transition: 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 #label {
@@ -105,10 +106,10 @@ body {
 
     color: #0e113f;
     transition: 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .footer {
