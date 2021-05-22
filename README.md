@@ -1,2 +1,2 @@
-# Sovid Stats Site
+# Covid Stats Site
  A depressing site with covid stats
