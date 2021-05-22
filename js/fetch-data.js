@@ -13,7 +13,7 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 
-request.onload = function() {
+request.onload = function () {
     const jsonData = request.response;
     console.log(jsonData)
     console.log("Total Cases: " + jsonData['data']['summary']['total'])
@@ -27,30 +27,71 @@ function changeBgColor(newColor) {
 }
 
 function populateNumber(obj) {
-    elem = document.getElementById('counter_number');
+    elemNumber = document.getElementById('counter_number');
+    elemLabel = document.getElementById('label');
 
     if (number_type == 0) {
-        elem.innerText = obj['data']['summary']['total'];
-    }
-    else if (number_type == 1) {
-        elem.innerText = obj['data']['summary']['discharged'];
-    }
-    else if (number_type == 2) {
-        elem.innerText = obj['data']['summary']['deaths'];
+        elemNumber.animate({
+            opacity: [1, 0]
+        }, 1000);
+        elemNumber.innerText = obj['data']['summary']['total'];
+        elemNumber.animate({
+            opacity: [0, 1]
+        }, 1000);
+
+        elemLabel.animate({
+            opacity: [1, 0]
+        }, 1000);
+        elemLabel.innerText = 'Cumulative Confirmed Cases'
+        elemLabel.animate({
+            opacity: [0, 1]
+        }, 1000);
+    } else if (number_type == 1) {
+        elemNumber.animate({
+            opacity: [1, 0]
+        }, 1000);
+        elemNumber.innerText = obj['data']['summary']['discharged'];
+        elemNumber.animate({
+            opacity: [0, 1]
+        }, 1000);
+
+        elemLabel.animate({
+            opacity: [1, 0]
+        }, 1000);
+        elemLabel.innerText = 'Cumulative Recovered Cases'
+        elemLabel.animate({
+            opacity: [0, 1]
+        }, 1000);
+    } else if (number_type == 2) {
+        elemNumber.animate({
+            opacity: [1, 0]
+        }, 1000);
+        elemNumber.innerText = obj['data']['summary']['deaths'];
+        elemNumber.animate({
+            opacity: [0, 1]
+        }, 1000);
+
+        elemLabel.animate({
+            opacity: [1, 0]
+        }, 1000);
+        elemLabel.innerText = 'Cumulative Deaths'
+        elemLabel.animate({
+            opacity: [0, 1]
+        }, 1000);
     }
     number_type = (number_type + 1) % 3
 }
 
 function buttonClick() {
-    if(ovr_state == 0) {
+    if (ovr_state == 0) {
         populateNumber(request.response)
         changeBgColor(green_color)
     }
-    if(ovr_state == 1) {
+    if (ovr_state == 1) {
         populateNumber(request.response)
         changeBgColor(scream_color)
     }
-    if(ovr_state == 2) {
+    if (ovr_state == 2) {
         populateNumber(request.response)
         changeBgColor(cream_color)
     }
