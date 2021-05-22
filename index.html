@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@420;690&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
     <div class="container" id="container">
         <div class="header" id="header"></div>
-        <div class="counter" id="counter"></div>
-        <div class="footer" id="footer"></div>
+        <div class="counter" id="counter">
+            <p id="counter_number"></p>
+        </div>
+        <div class="footer" id="footer">
+            <button class="button" onclick = "buttonClick()">
+                Click Me !
+            </button>
+        </div>
     </div>
     <script type="text/javascript" src="./js/fetch-data.js"></script>
 </body>
