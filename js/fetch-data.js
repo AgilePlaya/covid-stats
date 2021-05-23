@@ -1,3 +1,7 @@
+var onLine = navigator.onLine;
+
+setInterval(check_state_change, 1000);
+
 var requestURL = 'https://api.rootnet.in/covid19-in/stats/latest';
 
 var grim_color = '#0e113f';
@@ -92,7 +96,6 @@ function populateNumber(obj) {
             opacity: [0, 1]
         }, 1000);
     }
-    number_type = (number_type + 1) % 3
 }
 
 function buttonClick() {
@@ -109,4 +112,35 @@ function buttonClick() {
         changeBgColor(scream_color)
     }
     ovr_state = (ovr_state + 1) % 3
+    number_type = (number_type + 1) % 3
 };
+
+function check_state_change() {
+    if (onLine!=navigator.onLine) {
+        check_connectivity();
+        onLine = navigator.onLine
+    }
+}
+
+function check_connectivity() {
+    if (navigator.onLine==false) {
+        elemNumber = document.getElementById('counter_number');
+        elemLabel = document.getElementById('label');
+        elemButton = document.getElementById('change_data');
+    
+        elemNumber.innerHTML = '<img src="./images/sad-cheem-cropped.png"></img>'
+    
+        elemLabel.animate({opacity: [1, 0]}, 1000);
+        elemLabel.innerText = 'Lost Connection to Internet'
+        elemLabel.animate({opacity: [0, 1]}, 1000);
+
+        elemButton.disabled = true;
+
+        console.log("Data Fetch Unsuccessful")
+    }
+    else {
+        elemButton = document.getElementById('change_data');
+        elemButton.disabled = true;
+        buttonClick();
+    }
+}
