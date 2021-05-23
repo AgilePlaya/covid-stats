@@ -3,7 +3,8 @@ var onLine = navigator.onLine;
 window.onload = function () {
     //-- usage --//
     preload(
-        "https://agileplaya.github.io/covid-stats/images/sad-cheem-cropped.png"
+        "https://agileplaya.github.io/covid-stats/images/sad-cheem-cropped.png",
+        "https://agileplaya.github.io/covid-stats/images/happy-cheem-cropped.png"
     )
 }
 
@@ -119,7 +120,7 @@ function check_state_change() {
 }
 
 function check_connectivity() {
-    if (navigator.onLine==false) {        
+    if (navigator.onLine==false) {
         elemNumber = document.getElementById('counter_number');
         elemLabel = document.getElementById('label');
         elemButton = document.getElementById('change_data');
@@ -130,13 +131,25 @@ function check_connectivity() {
         elemLabel.innerText = 'Lost Connection to Internet'
         elemLabel.animate({opacity: [0, 1]}, 1000);
 
+        changeBgColor(scream_color)
         elemButton.disabled = true;
 
         console.log("Data Fetch Unsuccessful")
     }
     else {
+        elemNumber = document.getElementById('counter_number');
+        elemLabel = document.getElementById('label');
         elemButton = document.getElementById('change_data');
+    
+        elemNumber.innerHTML = '<img src="https://agileplaya.github.io/covid-stats/images/happy-cheem-cropped.png"></img>'
+    
+        elemLabel.animate({opacity: [1, 0]}, 1000);
+        elemLabel.innerText = 'Connected. Press button below to check stats.'
+        elemLabel.animate({opacity: [0, 1]}, 1000);
+
+        changeBgColor(green_color)
         elemButton.disabled = false;
-        buttonClick();
+
+        console.log("Data Fetch Unsuccessful")
     }
 }
