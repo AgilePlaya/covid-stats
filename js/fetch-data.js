@@ -1,12 +1,14 @@
 var requestURL = 'https://api.rootnet.in/covid19-in/stats/latest';
 
-var grim_color = '#0e113f'
-var cream_color = '#f7eace'
-var green_color = '#e1f7ce'
-var scream_color = '#f7cece'
+var grim_color = '#0e113f';
+var cream_color = '#f7eace';
+var green_color = '#e1f7ce';
+var scream_color = '#f7cece';
 
-var ovr_state = 0
-var number_type = 0
+var css_colors = document.querySelector(':root');
+
+var ovr_state = 0;
+var number_type = 0;
 
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -34,8 +36,7 @@ request.onload = function () {
 }
 
 function changeBgColor(newColor) {
-    const body = document.getElementById('body');
-    body.style.backgroundColor = newColor
+    css_colors.style.setProperty('--color1', newColor)
 }
 
 function populateNumber(obj) {

@@ -1,3 +1,8 @@
+:root {
+    --color1: #f7eace;
+    --color2: #0e113f;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +23,7 @@
 
 body {
     overflow: hidden;
-    background-color: #f7eace;
+    background-color: var(--color1);
     transition: 1s ease-in-out;
 }
 
@@ -83,7 +88,7 @@ body {
     text-align: center;
     vertical-align: bottom;
 
-    color: #0e113f;
+    color: var(--color2);
     transition: 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
@@ -106,7 +111,7 @@ body {
     text-align: center;
     vertical-align: top;
 
-    color: #0e113f;
+    color: var(--color2);
     transition: 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
@@ -140,8 +145,8 @@ body {
 
     font-size: 1.5vh;
 
-    background-color: #0e113f;
-    color: white;
+    background-color: var(--color2);
+    color: var(--color1);
     border-color: transparent;
     border-radius: 50px;
     border-width: 3px;
@@ -152,8 +157,8 @@ body {
 .button:hover {
     background-color: transparent;
 
-    color: #0e113f;
-    border-color: #0e113f;
+    color: var(--color2);
+    border-color: var(--color2);
 
     cursor: pointer;
 
