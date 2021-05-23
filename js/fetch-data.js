@@ -20,7 +20,7 @@ request.onerror = function() {
     elemNumber.innerHTML = '<img src="./images/sad-cheem-cropped.png"></img>'
 
     elemLabel.animate({opacity: [1, 0]}, 1000);
-    elemLabel.innerText = 'Data Fetch Unsuccessful'
+    elemLabel.innerText = 'Could not connect to Database'
     elemLabel.animate({opacity: [0, 1]}, 1000);
     console.log("Data Fetch Unsuccessful")
 }
