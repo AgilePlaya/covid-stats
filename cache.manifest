@@ -1,16 +1,13 @@
 #Version 0.8
 
 CACHE:
-./index.html
-./offline.html
-./js/fetch-data.js
-./css/style.css
-./images/sad-cheem-cropped.png
+agileplaya.github.io/covid-stats/index.html
+agileplaya.github.io/covid-stats/offline.html
+agileplaya.github.io/covid-stats/js/fetch-data.js
+agileplaya.github.io/covid-stats/css/style.css
+agileplaya.github.io/covid-stats/images/sad-cheem-cropped.png
 https://fonts.googleapis.com/css2?family=MuseoModerno:wght@420;690&display=swap
 https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap
 
 FALLBACK:
 ./offline.html
-
-NETWORK:
-*
