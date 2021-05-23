@@ -1,5 +1,20 @@
 var onLine = navigator.onLine;
 
+window.onload = function () {
+    //-- usage --//
+    preload(
+        "https://agileplaya.github.io/covid-stats/images/sad-cheem-cropped.png"
+    )
+}
+
+var images = [];
+function preload() {
+    for (var i = 0; i < arguments.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.arguments[i];
+    }
+}
+
 setInterval(check_state_change, 1000);
 
 var requestURL = 'https://api.rootnet.in/covid19-in/stats/latest';
@@ -23,12 +38,17 @@ request.onerror = function() {
     elemNumber = document.getElementById('counter_number');
     elemLabel = document.getElementById('label');
 
-    elemNumber.innerHTML = '<img src="./images/sad-cheem-cropped.png"></img>'
+    elemNumber.innerHTML = '<img src="https://agileplaya.github.io/covid-stats/images/sad-cheem-cropped.png"></img>'
 
     elemLabel.animate({opacity: [1, 0]}, 1000);
     elemLabel.innerText = 'Could not connect to Database'
     elemLabel.animate({opacity: [0, 1]}, 1000);
     console.log("Data Fetch Unsuccessful")
+}
+
+request.onprogress = function() {
+    elemNumber = document.getElementById('counter_number');
+    elemNumber.innerText = 'Fetching Data';
 }
 
 request.onload = function () {
@@ -48,53 +68,29 @@ function populateNumber(obj) {
     elemLabel = document.getElementById('label');
 
     if (number_type == 0) {
-        elemNumber.animate({
-            opacity: [1, 0]
-        }, 1000);
+        elemNumber.animate({opacity: [1, 0]}, 1000);
         elemNumber.innerText = obj['data']['summary']['total'];
-        elemNumber.animate({
-            opacity: [0, 1]
-        }, 1000);
+        elemNumber.animate({opacity: [0, 1]}, 1000);
 
-        elemLabel.animate({
-            opacity: [1, 0]
-        }, 1000);
+        elemLabel.animate({opacity: [1, 0]}, 1000);
         elemLabel.innerText = 'Cumulative Confirmed Cases in India'
-        elemLabel.animate({
-            opacity: [0, 1]
-        }, 1000);
+        elemLabel.animate({opacity: [0, 1]}, 1000);
     } else if (number_type == 1) {
-        elemNumber.animate({
-            opacity: [1, 0]
-        }, 1000);
+        elemNumber.animate({opacity: [1, 0]}, 1000);
         elemNumber.innerText = obj['data']['summary']['discharged'];
-        elemNumber.animate({
-            opacity: [0, 1]
-        }, 1000);
+        elemNumber.animate({opacity: [0, 1]}, 1000);
 
-        elemLabel.animate({
-            opacity: [1, 0]
-        }, 1000);
+        elemLabel.animate({opacity: [1, 0]}, 1000);
         elemLabel.innerText = 'Cumulative Recovered Cases in India'
-        elemLabel.animate({
-            opacity: [0, 1]
-        }, 1000);
+        elemLabel.animate({opacity: [0, 1]}, 1000);
     } else if (number_type == 2) {
-        elemNumber.animate({
-            opacity: [1, 0]
-        }, 1000);
+        elemNumber.animate({opacity: [1, 0]}, 1000);
         elemNumber.innerText = obj['data']['summary']['deaths'];
-        elemNumber.animate({
-            opacity: [0, 1]
-        }, 1000);
+        elemNumber.animate({opacity: [0, 1]}, 1000);
 
-        elemLabel.animate({
-            opacity: [1, 0]
-        }, 1000);
+        elemLabel.animate({opacity: [1, 0]}, 1000);
         elemLabel.innerText = 'Cumulative Deaths in India'
-        elemLabel.animate({
-            opacity: [0, 1]
-        }, 1000);
+        elemLabel.animate({opacity: [0, 1]}, 1000);
     }
 }
 
@@ -123,12 +119,12 @@ function check_state_change() {
 }
 
 function check_connectivity() {
-    if (navigator.onLine==false) {
+    if (navigator.onLine==false) {        
         elemNumber = document.getElementById('counter_number');
         elemLabel = document.getElementById('label');
         elemButton = document.getElementById('change_data');
     
-        elemNumber.innerHTML = '<img src="./images/sad-cheem-cropped.png"></img>'
+        elemNumber.innerHTML = '<img src="https://agileplaya.github.io/covid-stats/images/sad-cheem-cropped.png"></img>'
     
         elemLabel.animate({opacity: [1, 0]}, 1000);
         elemLabel.innerText = 'Lost Connection to Internet'
