@@ -136,7 +136,7 @@ function check_connectivity() {
     }
     else {
         elemButton = document.getElementById('change_data');
-        elemButton.disabled = true;
+        elemButton.disabled = false;
         buttonClick();
     }
 }
