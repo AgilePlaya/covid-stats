@@ -1,0 +1,15 @@
+#Version 0.8
+
+CACHE:
+index.html
+offline.html
+js/fetch-data.js
+css/style.css
+images/sad-cheem-cropped.png
+https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap
+
+FALLBACK:
+offline.html
+
+NETWORK:
+*
