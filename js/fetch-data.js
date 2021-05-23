@@ -13,6 +13,18 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 
+request.onerror = function() {
+    elemNumber = document.getElementById('counter_number');
+    elemLabel = document.getElementById('label');
+
+    elemNumber.innerHTML = '<img src="./images/sad-cheem-cropped.png"></img>'
+
+    elemLabel.animate({opacity: [1, 0]}, 1000);
+    elemLabel.innerText = 'Data Fetch Unsuccessful'
+    elemLabel.animate({opacity: [0, 1]}, 1000);
+    console.log("Data Fetch Unsuccessful")
+}
+
 request.onload = function () {
     const jsonData = request.response;
     console.log(jsonData)
