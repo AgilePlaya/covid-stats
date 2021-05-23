@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html manifest="/cache.appcache">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" author="AgilePlaya" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A depressing site with covid-19 stats">
+    <title>Covid stats</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@420;690&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body id="body">
+    <div class="container" id="container">
+        <!-- <div class="header" id="header"></div> -->
+        <div class="counter" id="counter">
+            <p id="counter_number"><img src="./images/sad-cheem-cropped.png"></img></p>
+            <p id="label">Could not connect to Database</p>
+        </div>
+        <div class="footer" id="footer">
+            <button class="button" onclick="buttonClick()">
+                Change Data
+            </button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/fetch-data.js"></script>
+</body>
+
+</html>
